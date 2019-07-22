@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f738c295cf7e19364b48f1fcd516a660",
+    "revision": "27f60cd94f83c6a5b261876cde728179",
     "url": "/binder/index.html"
   },
   {
