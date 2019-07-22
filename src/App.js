@@ -1,22 +1,43 @@
 import React from "react";
-import { DateDisplay } from "./components";
+import { DateDisplay, TodoList } from "./components";
 import { GlobalStyle } from "./global";
 import styled from "styled-components";
 
-function App() {
+const App = ({ className }) => {
   return (
-    <div className="App">
+    <div className={className}>
       <Main>
         <DateDisplay />
+        <TodoList />
       </Main>
       <GlobalStyle />
     </div>
   );
-}
-
+};
 const Main = styled.main`
-  height: 100%;
-  background: #194a2f;
+  width: 100%;
 `;
 
-export default App;
+export default styled(App)`
+  background-color: #194a2f;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 50em;
+  position: relative;
+  .date-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3em;
+  }
+  .todo-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1em;
+  }
+`;

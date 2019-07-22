@@ -1,15 +1,51 @@
 import React, { Component } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import * as actions from "../actions";
+
 //import PropTypes from "prop-types";
 //import "./index.css"
-
+const fadeIn = (toward, distance = 100) => keyframes`
+  from {
+    ${toward}: ${distance}px;
+    opacity: 0
+  }
+  to {
+    ${toward}: 0px;
+    opacity: 1
+  }
+`;
+const DateText = styled.h2`
+  position: relative;
+  font-family: monospace;
+  font-size: 8em;
+  font-weight: 100;
+  color: white;
+  text-align: right;
+  margin-bottom: 8px;
+  animation: ${fadeIn("left")} 1s ease-in-out 1;
+`;
+const TimeText = styled.h3`
+  position: relative;
+  font-family: monospace;
+  font-size: 3em;
+  font-weight: 300;
+  color: white;
+  text-align: right;
+  padding-right: 32px;
+  animation: ${fadeIn("top", 32)} 1s ease-in-out 1;
+`;
 class DateDisplay extends Component {
-  state = {
-    date: "",
-    time: ""
-  };
-  componentDidMount() {
+  componentWillMount() {
     setInterval(() => {
+      const date = new Date();
+      this.props.updateDate(date);
+    }, 100);
+  }
+  render() {
+    const { year, month, day, hours, minutes, seconds, period } = this.props;
+    const formatDate = () => {
       const months = [
         "January",
         "February",
@@ -24,55 +60,41 @@ class DateDisplay extends Component {
         "November",
         "December"
       ];
-      const date = new Date();
-      this.setState({
-        date: `${
-          months[date.getMonth()]
-        } ${date.getDate()}, ${date.getFullYear()}`,
-        time: formatTime(date)
-      });
-    }, 100);
-    const formatTime = date => {
-      const period = date.getHours() > 12 ? "PM" : "AM";
-      const hours = formatTimeElement(date.getHours(), true);
-      const minutes = formatTimeElement(date.getMinutes(), false);
-      const seconds = formatTimeElement(date.getSeconds(), false);
-      return `${hours}:${minutes}:${seconds} ${period}`;
-    };
-    const formatTimeElement = (element, isHours) => {
-      if (isHours && element > 12) {
-        element %= 12;
-      }
-      if (element < 10) {
-        return `0${element}`;
+      if (months[month] && day && year) {
+        return `${months[month]} ${day}, ${year}`;
       } else {
-        return element;
+        return "";
       }
     };
-  }
-  render() {
-    const { className } = this.props;
-    const { date, time } = this.state;
+    const formatTime = () => {
+      if (hours && minutes && seconds && period) {
+        return `${hours}:${minutes}:${seconds} ${period}`;
+      } else {
+        return "";
+      }
+    };
+
     return (
-      <div className={className}>
-        <h2>{date}</h2>
-        <h3>{time}</h3>
+      <div className="date-display">
+        <div>
+          <DateText>{formatDate()}</DateText>
+          <TimeText>{formatTime()}</TimeText>
+        </div>
       </div>
     );
   }
 }
 
-DateDisplay.propTypes = {};
+const mapStateToProps = state => {
+  return {
+    ...state.DateHandler
+  };
+};
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators(actions, dispatch);
+};
 
-DateDisplay.defaultProps = {};
-
-export default styled(DateDisplay)`
-  h2 {
-    font-size: 8em;
-    font-weight: 300;
-    color: white;
-  }
-  h3 {
-    font-family: monospace;
-  }
-`;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(DateDisplay);
