@@ -37,7 +37,13 @@ const TodoList = ({
   const inputFieldHeight = 50;
   const mapToComponents = data => {
     if (data === undefined || data.length === 0) {
-      return <TodoItem key="empty" text="Empty" accessories={false} />;
+      return (
+        <TodoItem
+          key="empty"
+          text="Please add your To-do"
+          accessories={false}
+        />
+      );
     }
     return data.map(item => {
       console.log(item);

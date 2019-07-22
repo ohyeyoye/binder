@@ -29,7 +29,7 @@ const DateHandler = (state = initialState, action) => {
         hours: formatTimeElement(action.date.getHours(), true),
         minutes: formatTimeElement(action.date.getMinutes(), false),
         seconds: formatTimeElement(action.date.getSeconds(), false),
-        period: action.date.getHours() > 12 ? "PM" : "AM"
+        period: action.date.getHours() >= 12 ? "PM" : "AM"
       };
     default:
       return state;
