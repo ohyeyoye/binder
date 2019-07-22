@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/binder/static/css/main.34de6062.chunk.css",
+    "main.js": "/binder/static/js/main.f20a49f6.chunk.js",
+    "main.js.map": "/binder/static/js/main.f20a49f6.chunk.js.map",
+    "runtime~main.js": "/binder/static/js/runtime~main.ffd2b221.js",
+    "runtime~main.js.map": "/binder/static/js/runtime~main.ffd2b221.js.map",
+    "static/js/2.59de7db3.chunk.js": "/binder/static/js/2.59de7db3.chunk.js",
+    "static/js/2.59de7db3.chunk.js.map": "/binder/static/js/2.59de7db3.chunk.js.map",
+    "index.html": "/binder/index.html",
+    "precache-manifest.ca38869b571da73ff9741083432e3c05.js": "/binder/precache-manifest.ca38869b571da73ff9741083432e3c05.js",
+    "service-worker.js": "/binder/service-worker.js",
+    "static/css/main.34de6062.chunk.css.map": "/binder/static/css/main.34de6062.chunk.css.map"
+  }
+}
