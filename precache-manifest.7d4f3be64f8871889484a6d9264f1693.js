@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "27f60cd94f83c6a5b261876cde728179",
+    "revision": "9f4d4cd67058c22ffcd1ec6cca74d14d",
     "url": "/binder/index.html"
   },
   {
-    "revision": "bcc15ef2e53ebad34a07",
+    "revision": "202fe37891975a899c0d",
     "url": "/binder/static/css/main.34de6062.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/binder/static/js/2.59de7db3.chunk.js"
   },
   {
-    "revision": "bcc15ef2e53ebad34a07",
-    "url": "/binder/static/js/main.f20a49f6.chunk.js"
+    "revision": "202fe37891975a899c0d",
+    "url": "/binder/static/js/main.5a5dede1.chunk.js"
   },
   {
     "revision": "1c8e956435e6eb52eadf",
