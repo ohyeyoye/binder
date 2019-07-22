@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/binder/static/css/main.34de6062.chunk.css",
-    "main.js": "/binder/static/js/main.5a5dede1.chunk.js",
-    "main.js.map": "/binder/static/js/main.5a5dede1.chunk.js.map",
+    "main.js": "/binder/static/js/main.145aac52.chunk.js",
+    "main.js.map": "/binder/static/js/main.145aac52.chunk.js.map",
     "runtime~main.js": "/binder/static/js/runtime~main.ffd2b221.js",
     "runtime~main.js.map": "/binder/static/js/runtime~main.ffd2b221.js.map",
     "static/js/2.59de7db3.chunk.js": "/binder/static/js/2.59de7db3.chunk.js",
     "static/js/2.59de7db3.chunk.js.map": "/binder/static/js/2.59de7db3.chunk.js.map",
     "index.html": "/binder/index.html",
-    "precache-manifest.7d4f3be64f8871889484a6d9264f1693.js": "/binder/precache-manifest.7d4f3be64f8871889484a6d9264f1693.js",
+    "precache-manifest.ddc801bfad7d1e51199e072ca39d5903.js": "/binder/precache-manifest.ddc801bfad7d1e51199e072ca39d5903.js",
     "service-worker.js": "/binder/service-worker.js",
     "static/css/main.34de6062.chunk.css.map": "/binder/static/css/main.34de6062.chunk.css.map"
   }
