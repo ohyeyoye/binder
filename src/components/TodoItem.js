@@ -50,6 +50,7 @@ export default styled(TodoItem)`
     text-decoration: ${({ completed }) => (completed ? "line-through" : "none")}
     font-size: 1em;
     color: ${({ completed }) => (completed ? "lightGray" : "white")}
+    font-family: Arial
   }
   .completed-text {
     visibility: ${({ accessories, completed }) =>

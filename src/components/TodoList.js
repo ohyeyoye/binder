@@ -47,7 +47,6 @@ const TodoList = ({
       );
     }
     return data.map(item => {
-      console.log(item);
       return (
         <TodoItem
           key={item.id}
