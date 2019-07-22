@@ -5,6 +5,7 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import * as actions from "../actions";
 import { TodoItem } from "../components";
+import { below, size } from "../utilities";
 
 const InputField = styled.div`
   width: 100%;

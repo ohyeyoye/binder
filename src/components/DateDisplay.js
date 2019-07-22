@@ -3,7 +3,7 @@ import styled, { keyframes } from "styled-components";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import * as actions from "../actions";
-
+import { below, size } from "../utilities";
 //import PropTypes from "prop-types";
 //import "./index.css"
 const fadeIn = (toward, distance = 100) => keyframes`
@@ -19,12 +19,18 @@ const fadeIn = (toward, distance = 100) => keyframes`
 const DateText = styled.h2`
   position: relative;
   font-family: monospace;
-  font-size: 8em;
+  font-size: 6em;
   font-weight: 100;
   color: white;
   text-align: right;
   margin-bottom: 8px;
   animation: ${fadeIn("left")} 1s ease-in-out 1;
+  ${below.med`
+    font-size: 4em;
+  `}
+  ${below.small_med`
+    font-size: 3em;
+  `}
 `;
 const TimeText = styled.h3`
   position: relative;
@@ -33,8 +39,14 @@ const TimeText = styled.h3`
   font-weight: 300;
   color: white;
   text-align: right;
-  padding-right: 32px;
+  margin-right: 32px;
   animation: ${fadeIn("top", 32)} 1s ease-in-out 1;
+  ${below.med`
+    font-size: 2em;
+  `}
+  ${below.small_med`
+    font-size: 1.5em;
+  `}
 `;
 class DateDisplay extends Component {
   componentWillMount() {
