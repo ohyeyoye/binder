@@ -26,7 +26,21 @@ const TodoItems = styled.ul`
   height: 240px;
   border: none;
   border-radius: 25px;
-  overflow: scroll;
+  overflow-y: auto;
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background: rgba(14, 45, 28, 0.4);
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: rgba(14, 45, 28, 1);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(14, 45, 28, 0.7);
+  }
 `;
 const TodoList = ({
   className,
